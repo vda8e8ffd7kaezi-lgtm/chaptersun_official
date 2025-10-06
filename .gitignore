@@ -1,0 +1,12 @@
+# macOS system files
+.DS_Store
+._*
+
+# Windows thumbnail cache
+Thumbs.db
+
+# Node.js dependencies (if introduced later)
+node_modules/
+
+# Logs
+*.log
