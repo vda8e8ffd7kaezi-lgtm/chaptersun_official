@@ -1,3 +1,111 @@
+// ヒーロー動画をクロスフェードで切り替え
+document.addEventListener('DOMContentLoaded', function() {
+	var stacks = document.querySelectorAll('.hero-video-stack[data-hero-sources]');
+	stacks.forEach(function(stack) {
+		var sourcesAttr = stack.dataset.heroSources || '';
+		var sources = sourcesAttr.split('|').map(function(path) {
+			return path.trim();
+		}).filter(Boolean);
+		if (!sources.length) {
+			return;
+		}
+
+		stack.innerHTML = '';
+
+		var videos = sources.map(function(src, index) {
+			var video = document.createElement('video');
+			video.className = 'hero-video' + (index === 0 ? ' is-active' : '');
+			video.src = src;
+			video.autoplay = false;
+			video.loop = false;
+			video.muted = true;
+			video.setAttribute('muted', '');
+			video.playsInline = true;
+			video.setAttribute('playsinline', '');
+			video.preload = 'auto';
+			stack.appendChild(video);
+			return video;
+		});
+
+		if (!videos.length) {
+			return;
+		}
+
+		var activeIndex = 0;
+		var fadeLead = 0.9;
+
+		var ensurePlayback = function(video) {
+			var playPromise = video.play();
+			if (playPromise && typeof playPromise.then === 'function') {
+				playPromise.catch(function() {
+					// 自動再生がブロックされた場合はそのまま無視
+				});
+			}
+		};
+
+		ensurePlayback(videos[activeIndex]);
+
+		if (videos.length === 1) {
+			videos[0].loop = true;
+			return;
+		}
+
+		var switchTo = function(nextIndex) {
+			if (nextIndex === activeIndex) {
+				return;
+			}
+			var currentVideo = videos[activeIndex];
+			var nextVideo = videos[nextIndex];
+			if (!nextVideo) {
+				return;
+			}
+
+			nextVideo.currentTime = 0;
+			ensurePlayback(nextVideo);
+			nextVideo.classList.add('is-active');
+
+			var pauseAfterFade = function(event) {
+				if (event.propertyName !== 'opacity') {
+					return;
+				}
+				currentVideo.pause();
+				currentVideo.currentTime = 0;
+				currentVideo.removeEventListener('transitionend', pauseAfterFade);
+			};
+			currentVideo.addEventListener('transitionend', pauseAfterFade);
+			currentVideo.classList.remove('is-active');
+			activeIndex = nextIndex;
+		};
+
+		videos.forEach(function(video, index) {
+			var switchScheduled = false;
+			var ensureSwitch = function() {
+				if (switchScheduled) {
+					return;
+				}
+				switchScheduled = true;
+				var nextIndex = (index + 1) % videos.length;
+				switchTo(nextIndex);
+			};
+
+			video.addEventListener('play', function() {
+				switchScheduled = false;
+			});
+
+			video.addEventListener('timeupdate', function() {
+				if (!video.duration || video.duration === Infinity) {
+					return;
+				}
+				if (video.duration - video.currentTime <= fadeLead) {
+					ensureSwitch();
+				}
+			});
+
+			video.addEventListener('ended', ensureSwitch);
+		});
+	});
+});
+
 //タイマー
 $(function() {
 	var timer = false;
@@ -140,4 +248,3 @@ $(function() {
 $(function() {
 	$('main h2').wrapInner('<span class="uline">');
 });
-

@@ -173,10 +173,26 @@ header #mainimg {
 	min-height: clamp(320px, 58vw, 540px);
 }
 
-header #mainimg video {
+header #mainimg .hero-video-stack {
+	position: absolute;
+	inset: 0;
+}
+
+header #mainimg .hero-video {
+	position: absolute;
+	inset: 0;
 	width: 100%;
+	height: 100%;
 	display: block;
 	object-fit: cover;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.9s ease;
+}
+
+header #mainimg .hero-video.is-active {
+	opacity: 1;
+	z-index: 1;
 }
 
 header #mainimg .hero-overlay {
@@ -187,6 +203,7 @@ header #mainimg .hero-overlay {
 	justify-content: flex-start;
 	padding: clamp(18px, 5vw, 40px) clamp(0px, 2.5vw, 24px);
 	pointer-events: none;
+	z-index: 2;
 }
 
 header #mainimg .hero-overlay img {
