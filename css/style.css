@@ -501,6 +501,8 @@ footer {
 /*リンクテキスト*/
 footer a {text-decoration: none;color: #fff;}
 
+.footer-line-banner {margin: 10px 0;}
+
 /*著作部分*/
 .pr {display: block;}
 
