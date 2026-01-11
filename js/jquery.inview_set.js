@@ -1,50 +1,70 @@
 
 //main h2が画面内にきたら、スタイルlinestyleを適用する
-$('main h2').on('inview', function() {
-	$(this).addClass('linestyle');
+$('main h2').on('inview', function(event, isInView) {
+	if (isInView) {
+		$(this).addClass('linestyle');
+	}
 });
 
 //upスタイルが画面内にきたら、スタイルupstyleを適用する
-$('.up').on('inview', function() {
-	$(this).addClass('upstyle');
+$('.up').on('inview', function(event, isInView) {
+	if (isInView) {
+		$(this).addClass('upstyle');
+	}
 });
 
 //downスタイルが画面内にきたら、スタイルdownstyleを適用する
-$('.down').on('inview', function() {
-	$(this).addClass('downstyle');
+$('.down').on('inview', function(event, isInView) {
+	if (isInView) {
+		$(this).addClass('downstyle');
+	}
 });
 
 //leftスタイルが画面内にきたら、スタイルleftstyleを適用する
-$('.left').on('inview', function() {
-	$(this).addClass('leftstyle');
+$('.left').on('inview', function(event, isInView) {
+	if (isInView) {
+		$(this).addClass('leftstyle');
+	}
 });
 
 //rightスタイルが画面内にきたら、スタイルrightstyleを適用する
-$('.right').on('inview', function() {
-	$(this).addClass('rightstyle');
+$('.right').on('inview', function(event, isInView) {
+	if (isInView) {
+		$(this).addClass('rightstyle');
+	}
 });
 
 //transform1スタイルが画面内にきたら、スタイルtransform1styleを適用する
-$('.transform1').on('inview', function() {
-	$(this).addClass('transform1style');
+$('.transform1').on('inview', function(event, isInView) {
+	if (isInView) {
+		$(this).addClass('transform1style');
+	}
 });
 
 //transform2スタイルが画面内にきたら、スタイルtransform2styleを適用する
-$('.transform2').on('inview', function() {
-	$(this).addClass('transform2style');
+$('.transform2').on('inview', function(event, isInView) {
+	if (isInView) {
+		$(this).addClass('transform2style');
+	}
 });
 
 //transform3スタイルが画面内にきたら、スタイルtransform3styleを適用する
-$('.transform3').on('inview', function() {
-	$(this).addClass('transform3style');
+$('.transform3').on('inview', function(event, isInView) {
+	if (isInView) {
+		$(this).addClass('transform3style');
+	}
 });
 
 //blurスタイルが画面内にきたら、スタイルblurstyleを適用する
-$('.blur').on('inview', function() {
-	$(this).addClass('blurstyle');
+$('.blur').on('inview', function(event, isInView) {
+	if (isInView) {
+		$(this).addClass('blurstyle');
+	}
 });
 
 //crackerスタイルが画面内にきたら、クラッカーアニメーションを実行する
-$('.cracker').on('inview', function() {
-	$('.cracker').append('<span class="crackerstyle"><img src="images/cracker.gif" alt=""><img src="images/cracker.gif" alt=""></span>');
+$('.cracker').on('inview', function(event, isInView) {
+	if (isInView) {
+		$('.cracker').append('<span class="crackerstyle"><img src="images/cracker.gif" alt=""><img src="images/cracker.gif" alt=""></span>');
+	}
 });
