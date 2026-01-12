@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AI社内導入研修 | 合同会社ChapterSun</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="生成AIを業務に活かす社内導入研修。現場で使えるスキルを短期間で習得。"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="images/CS_logo_clear.png" type="image/png" />
+    <style>
+      /* LP専用スタイル */
+      .lp-hero {
+        background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 26, 51, 0.8)),
+          url("images/kensyuherohaikei.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #fff;
+        padding: clamp(60px, 12vw, 120px) 5%;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .lp-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at 20% 80%,
+            rgba(0, 102, 204, 0.3) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(0, 153, 255, 0.2) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+      }
+
+      .lp-hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .lp-hero-label {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 8px 24px;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        letter-spacing: 0.1em;
+        margin-bottom: 1.5em;
+        backdrop-filter: blur(10px);
+      }
+
+      .lp-hero h1 {
+        font-size: clamp(1.8rem, 5vw, 3rem);
+        font-weight: 700;
+        line-height: 1.4;
+        margin: 0 0 0.8em;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .lp-hero h1 span {
+        display: block;
+        font-size: clamp(1rem, 2.5vw, 1.3rem);
+        font-weight: 400;
+        opacity: 0.9;
+        margin-top: 0.5em;
+      }
+
+      .lp-hero-points {
+        display: flex;
+        justify-content: center;
+        gap: 2em;
+        flex-wrap: wrap;
+        margin: 2em 0;
+      }
+
+      .lp-hero-points li {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        font-size: clamp(0.9rem, 2vw, 1.1rem);
+      }
+
+      .lp-hero-points li::before {
+        content: "✓";
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        font-size: 0.8rem;
+      }
+
+      .lp-section {
+        padding: clamp(50px, 10vw, 100px) 5%;
+      }
+
+      .lp-section-title {
+        text-align: center;
+        margin-bottom: 2.5em;
+      }
+
+      .lp-section-title h2 {
+        font-size: clamp(1.5rem, 4vw, 2.2rem);
+        font-weight: 700;
+        color: #003366;
+        margin: 0 0 0.3em;
+        border: none;
+      }
+
+      .lp-section-title p {
+        font-size: clamp(0.9rem, 2vw, 1.1rem);
+        color: #666;
+        margin: 0;
+      }
+
+      /* 問題提起セクション */
+      .lp-problems {
+        background: #f8f9fa;
+      }
+
+      .problem-list {
+        max-width: 800px;
+        margin: 0 auto;
+        display: grid;
+        gap: 1.5em;
+      }
+
+      .problem-item {
+        background: #fff;
+        padding: 1.5em 2em;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        border-left: 4px solid #003366;
+      }
+
+      .problem-item::before {
+        content: "？";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: #003366;
+        color: #fff;
+        border-radius: 50%;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+
+      /* 特徴セクション */
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2em;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .feature-card {
+        background: #fff;
+        padding: 2em;
+        border-radius: 16px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+      }
+
+      .feature-icon {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #003366, #0066cc);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.2em;
+        font-size: 2rem;
+      }
+
+      .feature-card h3 {
+        font-size: 1.2rem;
+        color: #333;
+        margin: 0 0 0.8em;
+        border: none;
+        padding: 0;
+      }
+
+      .feature-card p {
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.8;
+        margin: 0;
+      }
+
+      /* 研修内容セクション */
+      .curriculum-list {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .curriculum-item {
+        display: flex;
+        gap: 2em;
+        margin-bottom: 2em;
+        padding: 2em;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        align-items: flex-start;
+      }
+
+      .curriculum-number {
+        width: 50px;
+        height: 50px;
+        background: #003366;
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+
+      .curriculum-content h3 {
+        font-size: 1.2rem;
+        color: #003366;
+        margin: 0 0 0.5em;
+        border: none;
+        padding: 0;
+      }
+
+      .curriculum-content p {
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.8;
+        margin: 0;
+      }
+
+      /* 料金セクション */
+      .lp-pricing {
+        background: linear-gradient(135deg, #003366 0%, #001a33 100%);
+        color: #fff;
+      }
+
+      .lp-pricing .lp-section-title h2 {
+        color: #fff;
+      }
+
+      .lp-pricing .lp-section-title p {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .price-cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2em;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .price-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 3em;
+        text-align: center;
+      }
+
+      .price-card h3 {
+        font-size: 1.3rem;
+        margin: 0 0 1em;
+        border: none;
+        padding: 0;
+      }
+
+      .price-amount {
+        font-size: clamp(2rem, 6vw, 3.5rem);
+        font-weight: 700;
+        margin: 0.5em 0;
+      }
+
+      .price-amount span {
+        font-size: 0.4em;
+        font-weight: 400;
+      }
+
+      .price-note {
+        font-size: 0.9rem;
+        opacity: 0.8;
+        margin-bottom: 1.5em;
+      }
+
+      .price-features {
+        text-align: left;
+        list-style: none;
+        padding: 0;
+        margin: 2em 0;
+      }
+
+      .price-features li {
+        padding: 0.8em 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 0.8em;
+      }
+
+      .price-features li::before {
+        content: "✓";
+        color: #4caf50;
+        font-weight: bold;
+      }
+
+      /* CTAセクション */
+      .lp-cta {
+        background: #f8f9fa;
+        text-align: center;
+      }
+
+      .lp-cta h2 {
+        font-size: clamp(1.3rem, 3.5vw, 2rem);
+        color: #003366;
+        margin-bottom: 0.5em;
+      }
+
+      .lp-cta p {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 2em;
+      }
+
+      .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1.5em;
+        flex-wrap: wrap;
+      }
+
+      .cta-btn {
+        display: inline-block;
+        padding: 1em 2.5em;
+        font-size: 1.1rem;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        font-weight: 600;
+      }
+
+      .cta-btn-primary {
+        background: #003366;
+        color: #fff;
+        box-shadow: 0 4px 15px rgba(0, 51, 102, 0.4);
+      }
+
+      .cta-btn-primary:hover {
+        background: #004488;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 51, 102, 0.5);
+        color: #fff;
+      }
+
+      .cta-btn-secondary {
+        background: #fff;
+        color: #003366;
+        border: 2px solid #003366;
+      }
+
+      .cta-btn-secondary:hover {
+        background: #003366;
+        color: #fff;
+      }
+
+      @media (max-width: 600px) {
+        .curriculum-item {
+          flex-direction: column;
+          gap: 1em;
+        }
+
+        .lp-hero-points {
+          flex-direction: column;
+          align-items: center;
+          gap: 1em;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <div id="logo">
+          <h1>
+            <a href="index.html"
+              ><img src="images/CS_logo.PNG" alt="ChapterSun"
+            /></a>
+          </h1>
+        </div>
+      </header>
+
+      <!--開閉ブロック-->
+      <div id="menubar">
+        <nav>
+          <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="company.html">会社紹介</a></li>
+            <li>
+              <a href="service.html">サービス紹介</a>
+              <ul>
+                <li>
+                  <a href="service.html"
+                    >AI導入サポート/社内導入研修/エージェント開発</a
+                  >
+                </li>
+                <li><a href="service.html">HP/LP制作</a></li>
+                <li><a href="service.html">YouTube運用代行</a></li>
+              </ul>
+            </li>
+            <li><a href="faq.html">よく頂く質問</a></li>
+            <li>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeJOYLGkUZWvZlzWYR7EwXOfacw48zdr_r9mEvomk-ctmm0eA/viewform?usp=dialog"
+                >お問い合わせ</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!--/#menubar-->
+
+      <main>
+        <!-- ヒーローセクション -->
+        <section class="lp-hero">
+          <div class="lp-hero-content">
+            <span class="lp-hero-label">AI TRAINING PROGRAM</span>
+            <h1>
+              生成AIを「使える」人材へ<span
+                >現場で即活用できる実践型AI研修プログラム</span
+              >
+            </h1>
+            <ul class="lp-hero-points">
+              <li>初心者でも安心のカリキュラム</li>
+              <li>業務に直結する実践演習</li>
+              <li>導入後のフォロー体制</li>
+            </ul>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeJOYLGkUZWvZlzWYR7EwXOfacw48zdr_r9mEvomk-ctmm0eA/viewform?usp=dialog"
+              class="cta-btn cta-btn-primary"
+              >無料相談を申し込む</a
+            >
+          </div>
+        </section>
+
+        <!-- 課題提起セクション -->
+        <section class="lp-section lp-problems">
+          <div class="lp-section-title">
+            <h2>こんなお悩みありませんか？</h2>
+            <p>多くの企業が抱えるAI導入の課題</p>
+          </div>
+          <div class="problem-list">
+            <div class="problem-item">
+              ChatGPTを導入したけど、使いこなせている社員が少ない
+            </div>
+            <div class="problem-item">
+              AIの活用方法が分からず、業務効率化が進まない
+            </div>
+            <div class="problem-item">
+              社員のITリテラシーに差があり、一律の研修では効果が出ない
+            </div>
+            <div class="problem-item">セキュリティや情報漏洩のリスクが心配</div>
+          </div>
+        </section>
+
+        <!-- 特徴セクション -->
+        <section class="lp-section">
+          <div class="lp-section-title">
+            <h2>ChapterSunの研修が選ばれる理由</h2>
+            <p>現場で本当に使えるスキルを身につける</p>
+          </div>
+          <div class="feature-grid">
+            <div class="feature-card blur">
+              <div class="feature-icon">🎯</div>
+              <h3>業務特化型カリキュラム</h3>
+              <p>
+                一般的なAI講座ではなく、御社の業務内容に合わせたオーダーメイドの研修プログラムを設計します。
+              </p>
+            </div>
+            <div class="feature-card blur">
+              <div class="feature-icon">👥</div>
+              <h3>レベル別クラス編成</h3>
+              <p>
+                初心者から上級者まで、スキルレベルに応じたクラス分けで、全員が確実にステップアップできます。
+              </p>
+            </div>
+            <div class="feature-card blur">
+              <div class="feature-icon">💼</div>
+              <h3>実践ワークショップ</h3>
+              <p>
+                座学だけでなく、実際の業務を想定した演習を通じて、翌日から使えるスキルを習得します。
+              </p>
+            </div>
+            <div class="feature-card blur">
+              <div class="feature-icon">🔒</div>
+              <h3>セキュリティ教育</h3>
+              <p>
+                AIを安全に業務活用するためのガイドライン策定や、情報セキュリティ教育も含まれています。
+              </p>
+            </div>
+            <div class="feature-card blur">
+              <div class="feature-icon">📊</div>
+              <h3>効果測定レポート</h3>
+              <p>
+                研修前後のスキル変化を可視化。投資対効果を明確にし、次のステップへの指針を提供します。
+              </p>
+            </div>
+            <div class="feature-card blur">
+              <div class="feature-icon">🤝</div>
+              <h3>定着サポート</h3>
+              <p>
+                研修後も定期的なフォローアップセッションで、学んだスキルが現場に定着するまで伴走します。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 研修内容セクション -->
+        <section class="lp-section" style="background: #f8f9fa">
+          <div class="lp-section-title">
+            <h2>研修プログラムの内容</h2>
+            <p>段階的に学べる体系的なカリキュラム</p>
+          </div>
+          <div class="curriculum-list">
+            <div class="curriculum-item blur">
+              <div class="curriculum-number">1</div>
+              <div class="curriculum-content">
+                <h3>生成AIの基礎理解</h3>
+                <p>
+                  ChatGPT、Claude、Geminiなど主要AIツールの特徴と使い分け。AIができること・できないことを正しく理解します。
+                </p>
+              </div>
+            </div>
+            <div class="curriculum-item blur">
+              <div class="curriculum-number">2</div>
+              <div class="curriculum-content">
+                <h3>コンテキストエンジニアリング</h3>
+                <p>
+                  AIから最適な回答を引き出すための指示の書き方を習得。実践的なテンプレートも提供します。
+                </p>
+              </div>
+            </div>
+            <div class="curriculum-item blur">
+              <div class="curriculum-number">3</div>
+              <div class="curriculum-content">
+                <h3>業務活用ワークショップ</h3>
+                <p>
+                  メール作成、議事録要約、企画書作成など、実際の業務シーンでのAI活用法を演習形式で学びます。
+                </p>
+              </div>
+            </div>
+            <div class="curriculum-item blur">
+              <div class="curriculum-number">4</div>
+              <div class="curriculum-content">
+                <h3>セキュリティ＆ガイドライン</h3>
+                <p>
+                  情報漏洩リスクの理解と対策、社内利用ガイドラインの策定方法を学びます。
+                </p>
+              </div>
+            </div>
+            <div class="curriculum-item blur">
+              <div class="curriculum-number">5</div>
+              <div class="curriculum-content">
+                <h3>フォローアップセッション</h3>
+                <p>
+                  研修後1〜3ヶ月で実施。現場での活用状況を確認し、追加の質問対応や応用テクニックを指導します。
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 研修プランセクション -->
+        <section class="lp-section lp-pricing">
+          <div class="lp-section-title">
+            <h2>研修プラン</h2>
+            <p>企業規模や研修内容に応じてカスタマイズ</p>
+          </div>
+          <div class="price-cards-container">
+            <div class="price-card">
+              <h3>スタンダードプラン</h3>
+              <p class="price-note">※弊社で準備する会場にて実施します</p>
+              <ul class="price-features">
+                <li>事前ヒアリング・カリキュラム設計</li>
+                <li>研修実施</li>
+                <li>オリジナルテキスト・テンプレート提供</li>
+                <li>研修後フォローアップ</li>
+                <li>受講者アンケート・効果測定レポート</li>
+              </ul>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeJOYLGkUZWvZlzWYR7EwXOfacw48zdr_r9mEvomk-ctmm0eA/viewform?usp=dialog"
+                class="cta-btn cta-btn-primary"
+                style="background: #fff; color: #003366"
+                >無料で見積もりを依頼</a
+              >
+            </div>
+            <div class="price-card">
+              <h3>eラーニングプラン</h3>
+              <p class="price-note">
+                ※弊社提携先の企業様の研修講座を使用します
+              </p>
+              <ul class="price-features">
+                <li>オンライン学習プラットフォーム提供</li>
+                <li>自分のペースで学べる動画教材</li>
+                <li>理解度確認テスト</li>
+                <li>オンライン質問サポート</li>
+                <li>修了証明書発行</li>
+              </ul>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeJOYLGkUZWvZlzWYR7EwXOfacw48zdr_r9mEvomk-ctmm0eA/viewform?usp=dialog"
+                class="cta-btn cta-btn-primary"
+                style="background: #fff; color: #003366"
+                >無料で見積もりを依頼</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- CTAセクション -->
+        <section class="lp-section lp-cta">
+          <h2>まずは無料相談から</h2>
+          <p>
+            御社の課題やご要望をお聞かせください。最適な研修プランをご提案いたします。
+          </p>
+          <div class="cta-buttons">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeJOYLGkUZWvZlzWYR7EwXOfacw48zdr_r9mEvomk-ctmm0eA/viewform?usp=dialog"
+              class="cta-btn cta-btn-primary"
+              >無料相談を申し込む</a
+            >
+            <a href="service_ai.html" class="cta-btn cta-btn-secondary"
+              >サービス一覧に戻る</a
+            >
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <ul id="footermenu">
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="company.html">会社紹介</a></li>
+          <li><a href="service.html">サービス紹介</a></li>
+          <li><a href="faq.html">よく頂く質問</a></li>
+          <li>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeJOYLGkUZWvZlzWYR7EwXOfacw48zdr_r9mEvomk-ctmm0eA/viewform?usp=dialog"
+              >お問い合わせ</a
+            >
+          </li>
+        </ul>
+
+        <div class="footer-line-banner">
+          <a href="https://lin.ee/JYR6FqE"
+            ><img
+              src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png"
+              alt="友だち追加"
+              height="36"
+              border="0"
+          /></a>
+        </div>
+
+        <div class="copy">
+          <small
+            >Copyright&copy;2025 All Rights Reserved. ChapterSun LLS.</small
+          >
+        </div>
+      </footer>
+
+      <!--開閉ボタン（ハンバーガーアイコン）-->
+      <div id="menubar_hdr"><span></span><span></span><span></span></div>
+    </div>
+    <!--/#container-->
+
+    <!--jQueryの読み込み-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!--パララックス（inview）-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
+    <script src="js/jquery.inview_set.js"></script>
+
+    <!--このテンプレート専用のスクリプト-->
+    <script src="js/main.js"></script>
+
+    <!--ページの上部へ戻るボタン-->
+    <div class="pagetop">
+      <a href="#"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+  </body>
+</html>
