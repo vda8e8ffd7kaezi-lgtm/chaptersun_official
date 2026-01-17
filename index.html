@@ -198,31 +198,20 @@
                 let html = "";
 
                 articles.forEach((article) => {
-                  // サムネイル画像を取得（enclosureまたはdescriptionから抽出）
-                  let thumbnail =
-                    article.enclosure?.link || article.thumbnail || "";
-
-                  // descriptionから画像を抽出（バックアップ）
-                  if (!thumbnail && article.description) {
-                    const imgMatch = article.description.match(
-                      /<img[^>]+src="([^">]+)"/
-                    );
-                    if (imgMatch) {
-                      thumbnail = imgMatch[1];
-                    }
-                  }
-
-                  // デフォルト画像
-                  if (!thumbnail) {
-                    thumbnail = "images/note1.webp";
-                  }
+                  // 記事の公開日を整形
+                  const pubDate = new Date(article.pubDate);
+                  const dateStr = `${pubDate.getFullYear()}/${String(
+                    pubDate.getMonth() + 1
+                  ).padStart(2, "0")}/${String(pubDate.getDate()).padStart(
+                    2,
+                    "0"
+                  )}`;
 
                   html += `
-                    <a href="${article.link}" class="note-card" target="_blank" rel="noopener">
-                      <figure class="note-card__thumb">
-                        <img src="${thumbnail}" alt="${article.title}" loading="lazy" onerror="this.src='images/note1.webp'">
-                      </figure>
+                    <a href="${article.link}" class="note-card note-card--text" target="_blank" rel="noopener">
+                      <span class="note-card__date">${dateStr}</span>
                       <h4 class="note-card__title">${article.title}</h4>
+                      <span class="note-card__read">記事を読む →</span>
                     </a>
                   `;
                 });

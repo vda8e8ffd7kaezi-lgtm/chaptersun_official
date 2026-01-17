@@ -812,6 +812,46 @@ footer a {text-decoration: none;color: #fff;}
 	box-shadow: 0 16px 32px rgba(0,0,0,0.12);
 }
 
+/* note記事テキストカードスタイル */
+.note-card--text {
+	padding: 24px;
+	background: linear-gradient(135deg, #003366 0%, #004d99 100%);
+	color: #fff;
+	min-height: 180px;
+	justify-content: space-between;
+}
+
+.note-card--text:hover {
+	background: linear-gradient(135deg, #004d99 0%, #0066cc 100%);
+}
+
+.note-card--text .note-card__date {
+	font-size: 0.85rem;
+	opacity: 0.8;
+	display: block;
+	margin-bottom: 8px;
+}
+
+.note-card--text .note-card__title {
+	padding: 0;
+	color: #fff;
+	font-size: 1.05rem;
+	line-height: 1.7;
+	flex-grow: 1;
+}
+
+.note-card--text .note-card__read {
+	font-size: 0.9rem;
+	opacity: 0.9;
+	margin-top: 12px;
+	display: block;
+	transition: transform 0.2s ease;
+}
+
+.note-card--text:hover .note-card__read {
+	transform: translateX(5px);
+}
+
 /* note記事ローディング・エラー表示 */
 .note-loading,
 .note-error {
