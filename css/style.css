@@ -812,6 +812,43 @@ footer a {text-decoration: none;color: #fff;}
 	box-shadow: 0 16px 32px rgba(0,0,0,0.12);
 }
 
+/* note記事ローディング・エラー表示 */
+.note-loading,
+.note-error {
+	grid-column: 1 / -1;
+	text-align: center;
+	padding: 40px 20px;
+	color: #666;
+	font-size: 0.95rem;
+}
+
+.note-loading::before {
+	content: "";
+	display: block;
+	width: 30px;
+	height: 30px;
+	margin: 0 auto 15px;
+	border: 3px solid #e4e2d7;
+	border-top-color: #003366;
+	border-radius: 50%;
+	animation: noteSpinner 0.8s linear infinite;
+}
+
+@keyframes noteSpinner {
+	to { transform: rotate(360deg); }
+}
+
+.note-error a {
+	display: inline-block;
+	margin-top: 10px;
+	color: #003366;
+	text-decoration: underline;
+}
+
+.note-error a:hover {
+	text-decoration: none;
+}
+
 @media (min-width: 960px) {
 	.note-list {
 		grid-template-columns: repeat(3, minmax(0, 1fr));

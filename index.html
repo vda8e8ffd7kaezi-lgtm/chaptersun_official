@@ -66,7 +66,11 @@
 
               <dl class="news-list">
                 <dt>2026/01/05<span class="icon-bg1">サービス</span></dt>
-                <dd><a href="service_ai_training.html">AI社内導入研修紹介ページを公開しました</a></dd>
+                <dd>
+                  <a href="service_ai_training.html"
+                    >AI社内導入研修紹介ページを公開しました</a
+                  >
+                </dd>
                 <dt>2026/01/01<span class="icon-bg1">サービス</span></dt>
                 <dd>YouTube運用代行サービス開始</dd>
                 <dt>2025/10/01<span class="icon-bg1">サービス</span></dt>
@@ -154,54 +158,9 @@
         <section class="bg1">
           <h2 id="note">note</h2>
 
-          <div class="note-list">
-            <a
-              href="https://note.com/ripe_moraea1177/n/n5ca7b42297f5"
-              class="note-card"
-              target="_blank"
-              rel="noopener"
-            >
-              <figure class="note-card__thumb">
-                <img
-                  src="images/note1.webp"
-                  alt="AIで仕事がなくなるは本当か？"
-                />
-              </figure>
-              <h4 class="note-card__title">
-                AIで「仕事がなくなる」は本当か？5年後を見据えた中小企業の生存戦略
-              </h4>
-            </a>
-
-            <a
-              href="https://note.com/ripe_moraea1177/n/nf0e7afd96da9"
-              class="note-card"
-              target="_blank"
-              rel="noopener"
-            >
-              <figure class="note-card__thumb">
-                <img
-                  src="images/note2.webp"
-                  alt="中小企業にAIが根付かない本当の理由"
-                />
-              </figure>
-              <h4 class="note-card__title">
-                中小企業にAIが根付かない本当の理由ー「便利そう」なのに成果が出ない、その裏にある3つの落とし穴とは？
-              </h4>
-            </a>
-
-            <a
-              href="https://note.com/ripe_moraea1177/n/n8c789af64575"
-              class="note-card"
-              target="_blank"
-              rel="noopener"
-            >
-              <figure class="note-card__thumb">
-                <img src="images/note3.webp" alt="AIプロンプト術完全ガイド" />
-              </figure>
-              <h4 class="note-card__title">
-                AIプロンプト術完全ガイド～結果を劇的に変える指示の書き方～
-              </h4>
-            </a>
+          <div class="note-list" id="note-container">
+            <!-- note記事はJavaScriptで動的に読み込まれます -->
+            <p class="note-loading">記事を読み込み中...</p>
           </div>
           <!--/.note-list-->
 
@@ -215,6 +174,73 @@
             >
           </p>
         </section>
+
+        <!-- note記事自動取得スクリプト -->
+        <script>
+          (function () {
+            const NOTE_USERNAME = "ripe_moraea1177";
+            const RSS_URL = `https://note.com/${NOTE_USERNAME}/rss`;
+            const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(
+              RSS_URL
+            )}`;
+            const DISPLAY_COUNT = 3; // 表示する記事数
+
+            const container = document.getElementById("note-container");
+
+            fetch(API_URL)
+              .then((response) => response.json())
+              .then((data) => {
+                if (data.status !== "ok") {
+                  throw new Error("RSS取得エラー");
+                }
+
+                const articles = data.items.slice(0, DISPLAY_COUNT);
+                let html = "";
+
+                articles.forEach((article) => {
+                  // サムネイル画像を取得（enclosureまたはdescriptionから抽出）
+                  let thumbnail =
+                    article.enclosure?.link || article.thumbnail || "";
+
+                  // descriptionから画像を抽出（バックアップ）
+                  if (!thumbnail && article.description) {
+                    const imgMatch = article.description.match(
+                      /<img[^>]+src="([^">]+)"/
+                    );
+                    if (imgMatch) {
+                      thumbnail = imgMatch[1];
+                    }
+                  }
+
+                  // デフォルト画像
+                  if (!thumbnail) {
+                    thumbnail = "images/note1.webp";
+                  }
+
+                  html += `
+                    <a href="${article.link}" class="note-card" target="_blank" rel="noopener">
+                      <figure class="note-card__thumb">
+                        <img src="${thumbnail}" alt="${article.title}" loading="lazy" onerror="this.src='images/note1.webp'">
+                      </figure>
+                      <h4 class="note-card__title">${article.title}</h4>
+                    </a>
+                  `;
+                });
+
+                container.innerHTML = html;
+              })
+              .catch((error) => {
+                console.error("note記事の取得に失敗しました:", error);
+                // エラー時はフォールバック表示
+                container.innerHTML = `
+                  <p class="note-error">
+                    記事の読み込みに失敗しました。<br>
+                    <a href="https://note.com/${NOTE_USERNAME}" target="_blank" rel="noopener">noteページで記事を見る →</a>
+                  </p>
+                `;
+              });
+          })();
+        </script>
       </main>
 
       <footer>
@@ -242,7 +268,9 @@
         </div>
 
         <div class="copy">
-          <small>Copyright&copy;2025 All Rights Reserved. ChapterSun LLS.</small>
+          <small
+            >Copyright&copy;2025 All Rights Reserved. ChapterSun LLS.</small
+          >
         </div>
       </footer>
 
