@@ -1,118 +1,139 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-<meta charset="UTF-8">
-<title>合同会社ChapterSun｜AI導入サポーター</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="ここにサイト説明を入れます">
-<link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="images/CS_logo_clear.png" type="image/png">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>合同会社ChapterSun｜AI導入サポーター</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="ここにサイト説明を入れます" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="images/CS_logo_clear.png" type="image/png" />
+  </head>
 
-<body>
+  <body>
+    <div id="container">
+      <header>
+        <div id="logo">
+          <h1>
+            <a href="index.html"
+              ><img src="images/CS_logo.PNG" alt="ChapterSun"
+            /></a>
+          </h1>
+        </div>
+      </header>
 
-<div id="container">
+      <!--開閉ブロック-->
+      <div id="menubar">
+        <nav>
+          <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="company.html">会社紹介</a></li>
+            <li>
+              <a href="service.html">サービス紹介</a>
+              <ul>
+                <li>
+                  <a href="service.html"
+                    >AI導入サポート/社内導入研修/エージェント開発</a
+                  >
+                </li>
+                <li><a href="service.html">HP/LP制作</a></li>
+                <li><a href="service.html">YouTube運用代行</a></li>
+              </ul>
+            </li>
+            <li><a href="faq.html">よく頂く質問</a></li>
+            <li>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeJOYLGkUZWvZlzWYR7EwXOfacw48zdr_r9mEvomk-ctmm0eA/viewform?usp=dialog"
+                >お問い合わせ</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!--/#menubar-->
 
-<header>
+      <main>
+        <section>
+          <h2>お問い合わせ</h2>
+          <!-- INSERT_FORM_HERE -->
+          <table class="ta1">
+            <tr>
+              <th>お名前※</th>
+              <td><input type="text" name="お名前" size="30" class="ws" /></td>
+            </tr>
+            <tr>
+              <th>メールアドレス※</th>
+              <td>
+                <input type="text" name="メールアドレス" size="30" class="ws" />
+              </td>
+            </tr>
+            <tr>
+              <th>お問い合わせ詳細※</th>
+              <td>
+                <textarea
+                  name="お問い合わせ詳細"
+                  cols="30"
+                  rows="10"
+                  class="wl"
+                ></textarea>
+              </td>
+            </tr>
+          </table>
 
-<div id="logo">
-<h1><a href="index.html"><img src="images/CS_logo.PNG" alt="ChapterSun"></a></h1>
-</div>
+          <p class="btn">
+            <input type="submit" value="内容を確認する" />
+          </p>
+        </section>
+      </main>
 
-</header>
+      <footer>
+        <ul id="footermenu">
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="company.html">会社紹介</a></li>
+          <li><a href="service.html">サービス紹介</a></li>
+          <li><a href="faq.html">よく頂く質問</a></li>
+          <li>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeJOYLGkUZWvZlzWYR7EwXOfacw48zdr_r9mEvomk-ctmm0eA/viewform?usp=dialog"
+              >お問い合わせ</a
+            >
+          </li>
+        </ul>
 
-<!--開閉ブロック-->
-<div id="menubar">
+        <div class="footer-line-banner">
+          <a href="https://lin.ee/JYR6FqE"
+            ><img
+              src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png"
+              alt="友だち追加"
+              height="36"
+              border="0"
+          /></a>
+        </div>
 
-<nav>
-<ul>
-<li><a href="index.html">ホーム</a></li>
-<li><a href="company.html">会社紹介</a></li>
-<li><a href="service.html">サービス紹介</a>
-	<ul>
-	<li><a href="service.html">AI導入サポート/社内導入研修/エージェント開発</a></li>
-	<li><a href="service.html">HP/LP制作</a></li>
-	<li><a href="service.html">YouTube運用代行</a></li>
-	</ul>
+        <div class="copy">
+          <small
+            >Copyright&copy;2025 All Rights Reserved. ChapterSun LLC.</small
+          >
+        </div>
+      </footer>
 
-</li>
-<li><a href="faq.html">よく頂く質問</a></li>
-<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeJOYLGkUZWvZlzWYR7EwXOfacw48zdr_r9mEvomk-ctmm0eA/viewform?usp=dialog">お問い合わせ</a></li>
-</ul>
-</nav>
+      <!--開閉ボタン（ハンバーガーアイコン）-->
+      <div id="menubar_hdr"><span></span><span></span><span></span></div>
+    </div>
+    <!--/#container-->
 
-</div>
-<!--/#menubar-->
+    <!--jQueryの読み込み-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<main>
+    <!--パララックス（inview）-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
+    <script src="js/jquery.inview_set.js"></script>
 
-<section>
+    <!--このテンプレート専用のスクリプト-->
+    <script src="js/main.js"></script>
 
-<h2>お問い合わせ</h2>
-<!-- INSERT_FORM_HERE -->
-<table class="ta1">
-<tr>
-<th>お名前※</th>
-<td><input type="text" name="お名前" size="30" class="ws"></td>
-</tr>
-<tr>
-<th>メールアドレス※</th>
-<td><input type="text" name="メールアドレス" size="30" class="ws"></td>
-</tr>
-<tr>
-<th>お問い合わせ詳細※</th>
-<td><textarea name="お問い合わせ詳細" cols="30" rows="10" class="wl"></textarea></td>
-</tr>
-</table>
-
-<p class="btn">
-<input type="submit" value="内容を確認する">
-</p>
-
-</section>
-
-</main>
-
-<footer>
-
-<ul id="footermenu">
-<li><a href="index.html">ホーム</a></li>
-<li><a href="company.html">会社紹介</a></li>
-<li><a href="service.html">サービス紹介</a></li>
-<li><a href="faq.html">よく頂く質問</a></li>
-<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeJOYLGkUZWvZlzWYR7EwXOfacw48zdr_r9mEvomk-ctmm0eA/viewform?usp=dialog">お問い合わせ</a></li>
-</ul>
-
-<div class="footer-line-banner">
-<a href="https://lin.ee/JYR6FqE"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a>
-</div>
-
-<div class="copy">
-<small>Copyright&copy;2025 All Rights Reserved. ChapterSun LLC.</small>
-</div>
-
-</footer>
-
-<!--開閉ボタン（ハンバーガーアイコン）-->
-<div id="menubar_hdr">
-<span></span><span></span><span></span>
-</div>
-
-</div>
-<!--/#container-->
-
-<!--jQueryの読み込み-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-<!--パララックス（inview）-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
-<script src="js/jquery.inview_set.js"></script>
-
-<!--このテンプレート専用のスクリプト-->
-<script src="js/main.js"></script>
-
-<!--ページの上部へ戻るボタン-->
-<div class="pagetop"><a href="#"><i class="fas fa-angle-double-up"></i></a></div>
-
-</body>
+    <!--ページの上部へ戻るボタン-->
+    <div class="pagetop">
+      <a href="#"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+  </body>
 </html>
