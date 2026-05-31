@@ -1,15 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <title>お問い合わせ ｜ 合同会社ChapterSun</title>
+    <title>マンツーマンAI活用サポート ｜ 合同会社ChapterSun</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="合同会社ChapterSunへのお問い合わせフォーム。AI導入相談はこちらから。"
+      content="担当者一人ひとりに伴走する個別AI活用サポート。実務に沿って習熟スピードを最大化します。"
     />
     <link rel="stylesheet" href="css/editorial.css" />
     <link rel="icon" href="images/CS_logo_clear.png" type="image/png" />
+    <style>
+      .coming-soon {
+        display: grid;
+        gap: 28px;
+        padding: clamp(60px, 9vw, 130px) 0;
+        text-align: left;
+      }
+      .coming-soon__mark {
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-weight: 300;
+        font-size: 13px;
+        letter-spacing: 0.28em;
+        text-transform: lowercase;
+        color: var(--vermilion);
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .coming-soon__mark::before {
+        content: "";
+        width: 38px;
+        height: 1px;
+        background: var(--vermilion);
+      }
+      .coming-soon__title {
+        margin: 0;
+        font-family: var(--font-mincho);
+        font-weight: 500;
+        font-size: clamp(1.7rem, 3.6vw, 2.6rem);
+        line-height: 1.4;
+        letter-spacing: 0.06em;
+        color: var(--ink);
+      }
+      .coming-soon__lead {
+        margin: 0;
+        font-family: var(--font-gothic);
+        font-size: 0.98rem;
+        line-height: 2.1;
+        color: var(--ink-soft);
+        max-width: 38em;
+      }
+      .coming-soon__cta {
+        margin-top: 20px;
+      }
+    </style>
   </head>
 
   <body>
@@ -54,11 +100,10 @@
         <div class="subpage-header">
           <div class="subpage-header-inner">
             <div>
-              <h1 class="subpage-title">お問い合わせ</h1>
-              <span class="subpage-en">let's start a conversation</span>
+              <h1 class="subpage-title">マンツーマンAI活用サポート</h1>
+              <span class="subpage-en">one-on-one ai coaching</span>
               <p class="subpage-lead" style="margin-top: 28px;">
-                ご質問・ご相談はお気軽にお寄せください。<br />
-                内容を確認の上、担当より折り返しご連絡いたします。
+                担当者一人ひとりに伴走し、実務に沿った課題でAI活用を定着させます。
               </p>
             </div>
           </div>
@@ -69,55 +114,38 @@
         <div class="subpage-body">
           <div class="subpage-body-inner">
             <aside class="subpage-aside">
-              Contact<br />
-              &mdash; name<br />
-              &mdash; email<br />
-              &mdash; message
+              Service No. 02<br />
+              one-on-one<br />
+              &middot;<br />
+              page coming soon
             </aside>
 
             <div class="subpage-content">
               <section class="fadein">
-                <div class="section-header">
-                  <h3>お問い合わせフォーム</h3>
-                  <span class="en">inquiry form</span>
+                <div class="coming-soon">
+                  <span class="coming-soon__mark">page coming soon</span>
+                  <h2 class="coming-soon__title">
+                    詳細ページは<br />準備中です。
+                  </h2>
+                  <p class="coming-soon__lead">
+                    現在、マンツーマンAI活用サポートの詳細ページを準備しています。<br />
+                    プランや料金、進め方をご検討の方はお気軽にお問い合わせください。担当よりご説明させていただきます。
+                  </p>
+                  <div class="coming-soon__cta">
+                    <p class="btn" style="text-align: left; margin: 0;">
+                      <a
+                        href="https://lin.ee/JYR6FqE"
+                        target="_blank"
+                        rel="noopener"
+                        >お問い合わせ</a
+                      >
+                    </p>
+                  </div>
                 </div>
-
-                <table class="ta1">
-                  <tr>
-                    <th>お名前 ※</th>
-                    <td><input type="text" name="お名前" size="30" class="ws" /></td>
-                  </tr>
-                  <tr>
-                    <th>メールアドレス ※</th>
-                    <td>
-                      <input
-                        type="text"
-                        name="メールアドレス"
-                        size="30"
-                        class="ws"
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>お問い合わせ詳細 ※</th>
-                    <td>
-                      <textarea
-                        name="お問い合わせ詳細"
-                        cols="30"
-                        rows="10"
-                        class="wl"
-                      ></textarea>
-                    </td>
-                  </tr>
-                </table>
-
-                <p class="btn" style="text-align: left; margin-top: 24px;">
-                  <input type="submit" value="内容を確認する" />
-                </p>
               </section>
 
               <p class="back-link">
-                <a href="index.html">ホームへ戻る</a>
+                <a href="service.html">サービス一覧へ戻る</a>
               </p>
             </div>
           </div>

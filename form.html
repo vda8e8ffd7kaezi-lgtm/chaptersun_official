@@ -1,137 +1,214 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-<meta charset="UTF-8">
-<title>合同会社ChapterSun｜AI導入サポーター</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="ここにサイト説明を入れます">
-<link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="images/CS_logo_clear.png" type="image/png">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>お問い合わせフォーム ｜ 合同会社ChapterSun</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="合同会社ChapterSunへのお問い合わせフォーム。" />
+    <link rel="stylesheet" href="css/editorial.css" />
+    <link rel="icon" href="images/CS_logo_clear.png" type="image/png" />
+  </head>
 
-<body>
+  <body>
+    <div id="container">
+      <header>
+        <div class="topbar">
+          <div class="mark">
+            <a href="index.html" aria-label="ChapterSun ホーム">
+              <img
+                src="images/new_logo/会社ロゴ(透過).png"
+                alt="ChapterSun"
+                class="logo-img"
+              />
+            </a>
+          </div>
+        </div>
 
-<div id="container">
+        <div id="menubar">
+          <nav>
+            <ul>
+              <li><a href="index.html">home</a></li>
+              <li><a href="company.html">company</a></li>
+              <li>
+                <a href="service.html" class="ddmenu">service</a>
+                <ul>
+                  <li><a href="service_ai.html">社内AI内製化支援</a></li>
+                  <li><a href="service_oneonone.html">マンツーマンAI活用サポート</a></li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="https://lin.ee/JYR6FqE"
+                  target="_blank"
+                  rel="noopener"
+                  >contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
 
-<header>
+        <div class="subpage-header">
+          <div class="subpage-header-inner">
+            <div>
+              <h1 class="subpage-title">お問い合わせフォーム</h1>
+              <span class="subpage-en">tell us about your project</span>
+              <p class="subpage-lead" style="margin-top: 28px;">
+                必要事項をご入力の上、確認画面へお進みください。
+              </p>
+            </div>
+          </div>
+        </div>
+      </header>
 
-<div id="logo">
-<h1><a href="index.html"><img src="images/CS_logo.PNG" alt="ChapterSun"></a></h1>
-</div>
+      <main>
+        <div class="subpage-body">
+          <div class="subpage-body-inner">
+            <aside class="subpage-aside">
+              Form<br />
+              Step 01 of 03<br />
+              &middot;<br />
+              入力 &gt; 確認 &gt; 完了
+            </aside>
 
-</header>
+            <div class="subpage-content">
+              <section class="fadein">
+                <div class="section-header">
+                  <h3>入力</h3>
+                  <span class="en">input</span>
+                </div>
 
-<!--開閉ブロック-->
-<div id="menubar">
+                <form
+                  name="form1"
+                  enctype="multipart/form-data"
+                  method="post"
+                  action="<?php echo $_SERVER['REQUEST_URI']; ?>"
+                >
+                  <input type="hidden" name="mode" value="form" />
+                  <table class="ta1">
+                    <tr>
+                      <th>お名前 <span style="color: var(--vermilion);">※</span></th>
+                      <td>
+                        <input
+                          name="item1"
+                          value="<?php echo $form['item1']; ?>"
+                          type="text"
+                          size="40"
+                          maxlength="500"
+                          class="ws"
+                        />
+                        <?php if ($msg['item1']) echo '<div style="color: var(--vermilion); font-size: 0.85rem; margin-top: 8px;">' . $msg['item1'] . '</div>'; ?>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>メールアドレス <span style="color: var(--vermilion);">※</span></th>
+                      <td>
+                        <input
+                          name="item2"
+                          value="<?php echo $form['item2']; ?>"
+                          type="text"
+                          size="40"
+                          maxlength="500"
+                          class="ws"
+                        />
+                        <?php if ($msg['item2']) echo '<div style="color: var(--vermilion); font-size: 0.85rem; margin-top: 8px;">' . $msg['item2'] . '</div>'; ?>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>お問い合わせ内容 <span style="color: var(--vermilion);">※</span></th>
+                      <td>
+                        <textarea
+                          name="item3"
+                          cols="40"
+                          rows="10"
+                          class="wl"
+                        ><?php echo $form['item3']; ?></textarea>
+                        <?php if ($msg['item3']) echo '<div style="color: var(--vermilion); font-size: 0.85rem; margin-top: 8px;">' . $msg['item3'] . '</div>'; ?>
+                      </td>
+                    </tr>
+                  </table>
 
-<nav>
-<ul>
-<li><a href="index.html">ホーム</a></li>
-<li><a href="company.html">会社紹介</a></li>
-<li><a href="service.html">サービス紹介</a>
-	<ul>
-	<li><a href="service.html">AI導入サポート/エージェント開発</a></li>
-	<li><a href="service.html">HP/LP制作</a></li>
-	<li><a href="service.html">SNS運用代行</a></li>
-	</ul>
+                  <p class="btn" style="text-align: left; margin-top: 32px;">
+                    <input type="submit" value="内容を確認する" />
+                    <input type="reset" value="リセット" />
+                  </p>
+                </form>
+              </section>
 
-</li>
-<li><a href="faq.html">よく頂く質問</a></li>
-<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeJOYLGkUZWvZlzWYR7EwXOfacw48zdr_r9mEvomk-ctmm0eA/viewform?usp=dialog">お問い合わせ</a></li>
-</ul>
-</nav>
+              <p class="back-link">
+                <a href="index.html">ホームへ戻る</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
 
-</div>
-<!--/#menubar-->
+      <footer>
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand">
+              <img
+                src="images/new_logo/会社ロゴ(透過).png"
+                alt="ChapterSun"
+                class="logo-img"
+              />
+            </div>
+            <div class="footer-line-banner" style="margin-top: 24px;">
+              <a href="https://lin.ee/JYR6FqE"
+                ><img
+                  src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png"
+                  alt="LINE 友だち追加"
+                  height="36"
+              /></a>
+            </div>
+          </div>
 
-<main>
+          <ul id="footermenu">
+            <li><a href="index.html">home</a></li>
+            <li><a href="company.html">company</a></li>
+            <li><a href="service.html">service</a></li>
+            <li>
+              <a
+                href="https://lin.ee/JYR6FqE"
+                target="_blank"
+                rel="noopener"
+                >contact</a
+              >
+            </li>
+          </ul>
 
-<section>
+          <div>
+            <p
+              style="
+                font-family: var(--font-serif);
+                font-style: italic;
+                font-size: 13px;
+                letter-spacing: 0.16em;
+                color: var(--ink-quiet);
+                line-height: 1.9;
+                margin: 0;
+              "
+            >
+              &ldquo;AIを、<br />現場で生きる仕組みへ。&rdquo;
+            </p>
+          </div>
+        </div>
 
-<h2>お問い合わせフォーム</h2>
+        <div class="copy">
+          <small>&copy; ChapterSun LLC. all rights reserved.</small>
+        </div>
+      </footer>
 
-<!-- フォームの情報はここからです -->
-<form name="form1" enctype="multipart/form-data" method="post" action="<?php echo $_SERVER["REQUEST_URI"];?>">
-<input type="hidden" name="mode" value="form">
-<table class="ta1">
-<!-- 入力／確認 -->
-<!--<tr><th class="tamidashi" colspan="2">お問い合わせフォーム</th></tr>-->
-<tr>
-<th width="150">お名前<span style="color:red">※</span></th>
-<td>
-<input name="item1" value="<?php echo $form["item1"];?>" type="text" size="40" maxlength="500" class="ws">
-<?php if ($msg["item1"]) echo '<div style="color:red">' . $msg["item1"] . '</div>'; ?>
-</td>
-</tr>
-<tr>
-<th width="150">メールアドレス<span style="color:red">※</span></th>
-<td>
-<input name="item2" value="<?php echo $form["item2"];?>" type="text" size="40" maxlength="500" class="ws">
-<?php if ($msg["item2"]) echo '<div style="color:red">' . $msg["item2"] . '</div>'; ?>
-</td>
-</tr>
-<tr>
-<th>お問い合わせ内容<span style="color:red">※</span></th>
-<td>
-<textarea name="item3" cols="40" rows="10" class="wl"><?php echo $form["item3"]; ?></textarea>
-<?php if ($msg["item3"]) echo '<div style="color:red">' . $msg["item3"] . '</div>'; ?>
-</td>
-</tr>
-</table>
+      <div id="menubar_hdr"><span></span><span></span><span></span></div>
+    </div>
 
-<p class="btn">
-<input type="submit" value="内容を確認する">
-&nbsp;
-<input type="reset" value="リセット">
-</p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
+    <script src="js/jquery.inview_set.js"></script>
+    <script src="js/main.js"></script>
 
-</form>
-<!-- フォームの情報はここまでです -->
-
-</section>
-
-</main>
-
-<footer>
-
-<ul id="footermenu">
-<li><a href="index.html">ホーム</a></li>
-<li><a href="company.html">会社紹介</a></li>
-<li><a href="service.html">サービス紹介</a></li>
-<li><a href="faq.html">よく頂く質問</a></li>
-<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeJOYLGkUZWvZlzWYR7EwXOfacw48zdr_r9mEvomk-ctmm0eA/viewform?usp=dialog">お問い合わせ</a></li>
-</ul>
-
-<div class="footer-line-banner">
-<a href="https://lin.ee/JYR6FqE"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a>
-</div>
-
-<div class="copy">
-<small>Copyright&copy;2025 All Rights Reserved. ChapterSun LLC.</small>
-</div>
-
-</footer>
-
-<!--開閉ボタン（ハンバーガーアイコン）-->
-<div id="menubar_hdr">
-<span></span><span></span><span></span>
-</div>
-
-</div>
-<!--/#container-->
-
-<!--jQueryの読み込み-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-<!--パララックス（inview）-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
-<script src="js/jquery.inview_set.js"></script>
-
-<!--このテンプレート専用のスクリプト-->
-<script src="js/main.js"></script>
-
-<!--ページの上部へ戻るボタン-->
-<div class="pagetop"><a href="#"><i class="fas fa-angle-double-up"></i></a></div>
-
-</body>
+    <div class="pagetop">
+      <a href="#"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+  </body>
 </html>

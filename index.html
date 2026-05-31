@@ -4,169 +4,215 @@
     <meta charset="UTF-8" />
     <title>合同会社ChapterSun｜AI導入サポーター</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="ここにサイト説明を入れます" />
-    <link rel="stylesheet" href="css/style.css" />
+    <meta
+      name="description"
+      content="合同会社ChapterSunは、生成AIで現場の手間を仕組みに変える伴走サポーター。社内AI内製化支援とマンツーマンAI活用サポートを提供します。"
+    />
+    <link rel="stylesheet" href="css/editorial.css" />
     <link rel="icon" href="images/CS_logo_clear.png" type="image/png" />
   </head>
 
   <body class="home">
     <div id="container">
       <header>
-        <div id="logo"></div>
+        <!-- 上部ロゴバー -->
+        <div class="topbar">
+          <div class="mark">
+            <a href="index.html" aria-label="ChapterSun ホーム">
+              <img
+                src="images/new_logo/会社ロゴ(透過).png"
+                alt="ChapterSun"
+                class="logo-img"
+              />
+            </a>
+          </div>
+        </div>
 
+        <!--ナビゲーション-->
+        <div id="menubar">
+          <nav>
+            <ul>
+              <li><a href="index.html">home</a></li>
+              <li><a href="company.html">company</a></li>
+              <li>
+                <a href="service.html" class="ddmenu">service</a>
+                <ul>
+                  <li><a href="service_ai.html">社内AI内製化支援</a></li>
+                  <li><a href="service_oneonone.html">マンツーマンAI活用サポート</a></li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="https://lin.ee/JYR6FqE"
+                  target="_blank"
+                  rel="noopener"
+                  >contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- ヒーロー -->
         <div id="mainimg">
           <video class="hero-video" autoplay loop muted playsinline>
             <source src="images/hero_movie.mp4" type="video/mp4" />
           </video>
+
           <div class="hero-content">
-            <p class="hero-company">ChapterSun LLC</p>
-            <h1 class="hero-title">AIで現場の手間を仕組みに変える。</h1>
-            <p class="hero-description">
-              企業の業務効率化・コスト削減・売上アップを、<br />生成AIの力で実現する伴奏サポーターです。
-            </p>
+            <div></div>
+
+            <div class="hero-body">
+              <p class="hero-company">ChapterSun LLC.</p>
+              <h1 class="hero-title">
+                AIで、<br />現場の手間を<br />仕組みに<em>変える</em>。
+              </h1>
+              <p class="hero-description">
+                企業の業務効率化・コスト削減・売上アップを、<br />生成AIの力で実現する伴走サポーターです。
+              </p>
+            </div>
+
+            <div class="hero-foot">
+              <span class="scroll">scroll</span>
+            </div>
           </div>
         </div>
       </header>
 
-      <!--開閉ブロック-->
-      <div id="menubar">
-        <nav>
-          <ul>
-            <li><a href="index.html">ホーム</a></li>
-            <li><a href="company.html">会社紹介</a></li>
-            <li>
-              <a href="service.html">サービス紹介</a>
-              <ul>
-                <li>
-                  <a href="service.html"
-                    >AI導入サポート/エージェント開発</a
-                  >
-                </li>
-                <li><a href="service.html">HP/LP制作</a></li>
-                <li><a href="service.html">SNS運用代行</a></li>
-              </ul>
-            </li>
-            <li><a href="faq.html">よく頂く質問</a></li>
-            <li>
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSeJOYLGkUZWvZlzWYR7EwXOfacw48zdr_r9mEvomk-ctmm0eA/viewform?usp=dialog"
-                >お問い合わせ</a
-              >
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <!--/#menubar-->
-
       <main>
-        <div class="c2">
-          <div class="main">
-            <section>
-              <h2 id="news">お知らせ</h2>
+        <!-- News -->
+        <section class="editorial-section fadein" id="news-section">
+          <div class="section-head">
+            <div class="index">01 &mdash; News</div>
+            <div>
+              <h2 class="title">お知らせ</h2>
+              <span class="en">recent updates from chaptersun</span>
+            </div>
+          </div>
 
-              <dl class="news-list">
-                <dt>2026/01/01<span class="icon-bg1">サービス</span></dt>
-                <dd>SNS運用代行サービス開始</dd>
-                <dt>2025/10/01<span class="icon-bg1">サービス</span></dt>
-                <dd>HP/LP制作サービス開始</dd>
-                <dt>2025/09/01<span>その他</span></dt>
-                <dd>公式サイトオープン</dd>
-              </dl>
-            </section>
+          <div class="section-body">
+            <div class="aside">一覧</div>
+            <dl class="news-list">
+              <dt id="news">
+                2026 / 01 / 15<span class="icon-bg1">company</span>
+              </dt>
+              <dd>合同会社ChapterSun 法人化</dd>
 
-            <section>
-              <h2 id="flow">導入の流れ</h2>
+              <dt>2025 / 09 / 01<span>other</span></dt>
+              <dd>公式サイトオープン</dd>
+            </dl>
+          </div>
+        </section>
 
-              <ol class="flow-steps">
-                <li>
-                  <p>
-                    <span class="step-title">お問い合わせ</span
-                    ><span class="step-desc">まずはご相談ください</span>
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <span class="step-title">ヒアリング / 現状把握</span
-                    ><span class="step-desc">課題を徹底的に分析</span>
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <span class="step-title">ご提案 / お見積り</span
-                    ><span class="step-desc">最適なプランを設計</span>
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <span class="step-title">PoC / 試験導入</span
-                    ><span class="step-desc">効果を可視化</span>
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <span class="step-title">展開 / 運用支援</span
-                    ><span class="step-desc">成功までサポート</span>
-                  </p>
-                </li>
-              </ol>
-            </section>
+        <!-- Flow -->
+        <section class="editorial-section fadein" id="flow-section">
+          <div class="section-head">
+            <div class="index">02 &mdash; Flow</div>
+            <div>
+              <h2 class="title" id="flow">導入の流れ</h2>
+              <span class="en">five steps to implementation</span>
+            </div>
+          </div>
 
-            <section>
-              <h2 id="reasons">選ばれる理由</h2>
+          <div class="section-body">
+            <div class="aside">step 01 &mdash; 05</div>
+            <ol class="flow-steps">
+              <li>
+                <p>
+                  <span class="step-title">お問い合わせ</span>
+                  <span class="step-desc">まずはご相談ください</span>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="step-title">ヒアリング / 現状把握</span>
+                  <span class="step-desc">課題を徹底的に分析</span>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="step-title">ご提案 / お見積り</span>
+                  <span class="step-desc">最適なプランを設計</span>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="step-title">PoC / 試験導入</span>
+                  <span class="step-desc">効果を可視化</span>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="step-title">展開 / 運用支援</span>
+                  <span class="step-desc">成功までサポート</span>
+                </p>
+              </li>
+            </ol>
+          </div>
+        </section>
 
-              <div class="reason-cards">
-                <div class="reason-card">
-                  <h3>課題整理から実装まで伴走</h3>
-                  <p>
-                    現場の業務に合わせて、無理なく成果に繋がる導入計画を設計。
-                  </p>
-                </div>
-                <div class="reason-card">
-                  <h3>現場で使える研修を実施</h3>
-                  <p>
-                    ツールの使い方だけでなく、ワークフローに落とし込む実践型で学べる。
-                  </p>
-                </div>
-                <div class="reason-card">
-                  <h3>小さく始めて効果を可視化</h3>
-                  <p>スモールスタートで投資対効果を確認し、段階的に拡大。</p>
-                </div>
+        <!-- Reasons -->
+        <section class="editorial-section fadein" id="reasons-section">
+          <div class="section-head">
+            <div class="index">03 &mdash; Why us</div>
+            <div>
+              <h2 class="title" id="reasons">選ばれる理由</h2>
+              <span class="en">three principles we hold</span>
+            </div>
+          </div>
+
+          <div class="section-body">
+            <div class="aside">三原則</div>
+            <div class="reason-cards">
+              <article class="reason-card fadein delay-1">
+                <h3>課題整理から実装まで伴走</h3>
+                <p>
+                  現場の業務に合わせて、無理なく成果に繋がる導入計画を設計。一過性ではなく、定着するまで並走します。
+                </p>
+              </article>
+              <article class="reason-card fadein delay-2">
+                <h3>現場で使える研修を実施</h3>
+                <p>
+                  ツールの使い方だけでなく、ワークフローに落とし込む実践型。学んだ翌日から業務で使えることを重視。
+                </p>
+              </article>
+              <article class="reason-card fadein delay-3">
+                <h3>小さく始めて効果を可視化</h3>
+                <p>
+                  スモールスタートで投資対効果を確認し、段階的に拡大。初期コストを抑えながら確実に前進します。
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Note -->
+        <section class="editorial-section inverse fadein" id="note-section">
+          <div class="section-head">
+            <div class="index">04 &mdash; Journal</div>
+            <div>
+              <h2 class="title" id="note">note</h2>
+              <span class="en">field notes &amp; essays</span>
+            </div>
+          </div>
+
+          <div class="section-body">
+            <div class="aside">連載中</div>
+            <div>
+              <div class="note-list" id="note-container">
+                <p class="note-loading">記事を読み込み中</p>
               </div>
-            </section>
+
+              <p class="btn mt30">
+                <a
+                  href="https://note.com/ripe_moraea1177"
+                  target="_blank"
+                  rel="noopener"
+                  >すべての記事を読む</a
+                >
+              </p>
+            </div>
           </div>
-          <!--/.main-->
-
-          <div class="sub">
-            <h3>Menu</h3>
-            <ul class="submenu">
-              <li><a href="#news">お知らせ</a></li>
-              <li><a href="#flow">導入の流れ</a></li>
-              <li><a href="#reasons">選ばれる理由</a></li>
-              <li><a href="#note">note</a></li>
-            </ul>
-          </div>
-          <!--/.sub-->
-        </div>
-        <!--/.c2-->
-
-        <section class="bg1">
-          <h2 id="note">note</h2>
-
-          <div class="note-list" id="note-container">
-            <!-- note記事はJavaScriptで動的に読み込まれます -->
-            <p class="note-loading">記事を読み込み中...</p>
-          </div>
-          <!--/.note-list-->
-
-          <p class="btn mt30">
-            <a
-              href="https://note.com/ripe_moraea1177"
-              class="ws"
-              target="_blank"
-              rel="noopener"
-              >一覧へ</a
-            >
-          </p>
         </section>
 
         <!-- note記事自動取得スクリプト -->
@@ -177,8 +223,7 @@
             const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(
               RSS_URL
             )}`;
-            const DISPLAY_COUNT = 3; // 表示する記事数
-
+            const DISPLAY_COUNT = 3;
             const container = document.getElementById("note-container");
 
             fetch(API_URL)
@@ -187,25 +232,23 @@
                 if (data.status !== "ok") {
                   throw new Error("RSS取得エラー");
                 }
-
                 const articles = data.items.slice(0, DISPLAY_COUNT);
                 let html = "";
 
                 articles.forEach((article) => {
-                  // 記事の公開日を整形
                   const pubDate = new Date(article.pubDate);
-                  const dateStr = `${pubDate.getFullYear()}/${String(
+                  const dateStr = `${pubDate.getFullYear()} / ${String(
                     pubDate.getMonth() + 1
-                  ).padStart(2, "0")}/${String(pubDate.getDate()).padStart(
+                  ).padStart(2, "0")} / ${String(pubDate.getDate()).padStart(
                     2,
                     "0"
                   )}`;
 
                   html += `
-                    <a href="${article.link}" class="note-card note-card--text" target="_blank" rel="noopener">
+                    <a href="${article.link}" class="note-card" target="_blank" rel="noopener">
                       <span class="note-card__date">${dateStr}</span>
                       <h4 class="note-card__title">${article.title}</h4>
-                      <span class="note-card__read">記事を読む →</span>
+                      <span class="note-card__read">read essay</span>
                     </a>
                   `;
                 });
@@ -214,11 +257,10 @@
               })
               .catch((error) => {
                 console.error("note記事の取得に失敗しました:", error);
-                // エラー時はフォールバック表示
                 container.innerHTML = `
                   <p class="note-error">
                     記事の読み込みに失敗しました。<br>
-                    <a href="https://note.com/${NOTE_USERNAME}" target="_blank" rel="noopener">noteページで記事を見る →</a>
+                    <a href="https://note.com/${NOTE_USERNAME}" target="_blank" rel="noopener">noteで記事を読む</a>
                   </p>
                 `;
               });
@@ -227,52 +269,69 @@
       </main>
 
       <footer>
-        <ul id="footermenu">
-          <li><a href="index.html">ホーム</a></li>
-          <li><a href="company.html">会社紹介</a></li>
-          <li><a href="service.html">サービス紹介</a></li>
-          <li><a href="faq.html">よく頂く質問</a></li>
-          <li>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSeJOYLGkUZWvZlzWYR7EwXOfacw48zdr_r9mEvomk-ctmm0eA/viewform?usp=dialog"
-              >お問い合わせ</a
-            >
-          </li>
-        </ul>
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand">
+              <img
+                src="images/new_logo/会社ロゴ(透過).png"
+                alt="ChapterSun"
+                class="logo-img"
+              />
+            </div>
+            <div class="footer-line-banner" style="margin-top: 24px;">
+              <a href="https://lin.ee/JYR6FqE"
+                ><img
+                  src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png"
+                  alt="LINE 友だち追加"
+                  height="36"
+              /></a>
+            </div>
+          </div>
 
-        <div class="footer-line-banner">
-          <a href="https://lin.ee/JYR6FqE"
-            ><img
-              src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png"
-              alt="友だち追加"
-              height="36"
-              border="0"
-          /></a>
+          <ul id="footermenu">
+            <li><a href="index.html">home</a></li>
+            <li><a href="company.html">company</a></li>
+            <li><a href="service.html">service</a></li>
+            <li>
+              <a
+                href="https://lin.ee/JYR6FqE"
+                target="_blank"
+                rel="noopener"
+                >contact</a
+              >
+            </li>
+          </ul>
+
+          <div>
+            <p
+              style="
+                font-family: var(--font-serif);
+                font-style: italic;
+                font-size: 13px;
+                letter-spacing: 0.16em;
+                color: var(--ink-quiet);
+                line-height: 1.9;
+                margin: 0;
+              "
+            >
+              &ldquo;AIを、<br />現場で生きる仕組みへ。&rdquo;
+            </p>
+          </div>
         </div>
 
         <div class="copy">
-          <small
-            >Copyright&copy;2025 All Rights Reserved. ChapterSun LLC.</small
-          >
+          <small>&copy; ChapterSun LLC. all rights reserved.</small>
         </div>
       </footer>
 
-      <!--開閉ボタン（ハンバーガーアイコン）-->
       <div id="menubar_hdr"><span></span><span></span><span></span></div>
     </div>
-    <!--/#container-->
 
-    <!--jQueryの読み込み-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-    <!--パララックス（inview）-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
     <script src="js/jquery.inview_set.js"></script>
-
-    <!--このテンプレート専用のスクリプト-->
     <script src="js/main.js"></script>
 
-    <!--ページの上部へ戻るボタン-->
     <div class="pagetop">
       <a href="#"><i class="fas fa-angle-double-up"></i></a>
     </div>

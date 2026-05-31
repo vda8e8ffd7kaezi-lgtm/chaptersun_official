@@ -167,34 +167,59 @@ $(function() {
 });
 
 
-//ドロップダウンの親liタグ
-$(function() {
-    $('#mainmenu a[href=""]').click(function() {
-		return false;
-    });
-});
-
-
-//ドロップダウンメニューの処理
+//ドロップダウンメニュー — CSS hover に統一し、jQuery slideToggle は廃止
 $(function(){
-
-	$('#menubar li:has(ul)').addClass('ddmenu_parent');
-	$('#mainmenu li:has(ul)').addClass('ddmenu_parent');
+	// クラス付与（スタイルフック）のみ。表示制御は CSS の :hover に任せる
+	$('#menubar li').has('ul').addClass('ddmenu_parent');
 	$('.ddmenu_parent > a').addClass('ddmenu');
 
-		//タッチデバイス用
-		$('.ddmenu').on('touchstart', function() {
-			$(this).next('ul').stop().slideToggle();
-			$('.ddmenu').not(this).next('ul').slideUp();
-			return false;
+	// 親アンカークリックは通常遷移を許可（href 指定があれば移動する）
+	// タッチデバイスのみ、初回タップで開く・2回目で遷移する挙動を実装
+	var isTouch = ('ontouchstart' in window);
+	if (isTouch) {
+		$('.ddmenu_parent > a.ddmenu').on('click', function(e) {
+			var $li = $(this).parent();
+			if (!$li.hasClass('is-open')) {
+				e.preventDefault();
+				$('.ddmenu_parent').not($li).removeClass('is-open');
+				$li.addClass('is-open');
+			}
 		});
-
-		//PC用
-		$('.ddmenu_parent').hover(function() {
-			$(this).children('ul').stop().slideToggle();
+		$(document).on('touchstart click', function(e) {
+			if (!$(e.target).closest('.ddmenu_parent').length) {
+				$('.ddmenu_parent').removeClass('is-open');
+			}
 		});
-
+	}
 });
+
+
+//スクロールフェードイン (IntersectionObserver)
+(function() {
+	if (typeof IntersectionObserver === 'undefined') {
+		// 非対応環境では即座に表示
+		document.querySelectorAll('.fadein').forEach(function(el) {
+			el.classList.add('is-visible');
+		});
+		return;
+	}
+	var observer = new IntersectionObserver(function(entries) {
+		entries.forEach(function(entry) {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('is-visible');
+				observer.unobserve(entry.target);
+			}
+		});
+	}, {
+		threshold: 0.12,
+		rootMargin: '0px 0px -80px 0px'
+	});
+	document.addEventListener('DOMContentLoaded', function() {
+		document.querySelectorAll('.fadein').forEach(function(el) {
+			observer.observe(el);
+		});
+	});
+})();
 
 
 //pagetop
@@ -238,8 +263,14 @@ $(window).on('load', function() {
 $(function() {
 	$('.openclose').next().hide();
 	$('.openclose').click(function() {
-		$(this).next().slideToggle();
-		$('.openclose').not(this).next().slideUp();
+		var $this = $(this);
+		$this.next().slideToggle(function() {
+			$this.toggleClass('is-open', $(this).is(':visible'));
+		});
+		$('.openclose').not($this).each(function() {
+			$(this).removeClass('is-open');
+			$(this).next().slideUp();
+		});
 	});
 });
 
