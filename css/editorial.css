@@ -337,6 +337,7 @@ main { flex: 1; }
 #menubar_hdr.ham { background: var(--ink); }
 
 .s #menubar.db {
+  display: block;
   position: fixed;
   z-index: 100;
   inset: 0;
